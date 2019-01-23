@@ -1,23 +1,31 @@
-Installing Image and Launching Container
+# Week 2 Assignment
+
+### Installing Image and Launching Container
 
 The easiest way to install a Mongo image is running the following command:
-docker run --name my-mongo -d mongo:3.4.18-jessie
 
-Run the Mongo container (Mongo Client)
-winpty docker run -it --link my-mongo:mongo --rm mongo mongo --host mongo test
+`docker run --name my-mongo -d mongo:3.4.18-jessie`
+
+### Run the Mongo container (Mongo Client)
+
+`winpty docker run -it --link my-mongo:mongo --rm mongo mongo --host mongo test`
 
 After this, we are "inside" the container running the MongoDB and can use Mongo commands.
 
-
+### Starting Mongo Client and Server
 To start the server (Mongo Server), we need to run the following command in a new terminal:
-docker exec -it my-mongo bash
 
-Inside MongoDB
+`docker exec -it my-mongo bash`
 
-Create DB
-use products;
+### Inside MongoDB:
 
-Create an user:
+### Create DB
+
+`use products;`
+
+### Create an user
+
+```
 use products;
 db.createUser({user:"user1", pwd:"123123", roles:[
     {
@@ -25,12 +33,17 @@ db.createUser({user:"user1", pwd:"123123", roles:[
         db: "products"
     }
 ]})
+```
 
 Then switch to the new user:
+
+```
 use products
 db.auth("user1","123123")
+```
 
-INSERT command
+### INSERT command
+```
 db.eletronics.insert(
     {
         brand: "Samsung",
@@ -59,11 +72,14 @@ db.eletronics.insert(
         }
     }
 )
+```
 
-FIND Command
+### FIND Command
+```
 db.eletronics.find({brand: "LG"})
 db.eletronics.find({price : {$gt:1000}})
+```
 
 
-UPDATE command
-db.eletronics.update({brand:"LG",model: "Soundbar XY4561"}, {price: 750.10}, {upsert:true} )
+### UPDATE command
+`db.eletronics.update({brand:"LG",model: "Soundbar XY4561"}, {price: 750.10}, {upsert:true} )`
