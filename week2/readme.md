@@ -6,16 +6,20 @@ The easiest way to install a Mongo image is running the following command:
 
 `docker run --name my-mongo -d mongo:3.4.18-jessie`
 
-### Run the Mongo container (Mongo Client)
+### Run the Mongo Client container
 
 `winpty docker run -it --link my-mongo:mongo --rm mongo mongo --host mongo test`
 
+*When using Windows, we may need to use the command `winpty` to ensure that the console uses TTY*
+
 After this, we are "inside" the container running the MongoDB and can use Mongo commands.
 
-### Starting Mongo Client and Server
-To start the server (Mongo Server), we need to run the following command in a new terminal:
+### Extra: Starting Mongo Server
+To enter into interactive mode in a running container, we need to run the following command in a new terminal:
 
 `docker exec -it my-mongo bash`
+
+*However we shouldn't use the same container as both the server and client, since this can cause some problems in the future*
 
 ### Inside MongoDB:
 
