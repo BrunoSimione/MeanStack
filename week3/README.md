@@ -1,3 +1,4 @@
+# *Part I*
 # Install Node.JS
 We need to download and install the **Node.js** from the website https://nodejs.org/en/
 
@@ -51,10 +52,10 @@ We changed the file index.js so we can test the connection with Node and MongoDB
 
 
 # Populate MongoDB
-Create the file XXXX to populate the database.
+Create the file [sample.js](https://oddlylabs.com/brunosimione/ITE5430/src/week3/week3/sample.js) to populate the database.
 
 # Checking Data and Connection
-Run the file XXXX to check the data and connection with Node -> MongoDB
+Run the file [getdata.js](https://oddlylabs.com/brunosimione/ITE5430/src/week3/week3/getdata.js) to check the data and connection with Node -> MongoDB
 
 ```
 node getdata.js
@@ -62,10 +63,10 @@ node getdata.js
 
 
 # Create the micro service file
-The file XXXX contains the micro sevice that will listen to the specified port (in this case :3000) and will link with the lib folder containing the API.
+The file [run.js](https://oddlylabs.com/brunosimione/ITE5430/src/week3/week3/Assignment/run.js) contains the micro sevice that will listen to the specified port (in this case :3000) and will link with the lib folder containing the API.
 
 # Create the API routes file
-The file XXXX contains the API routes for GET, POST, UPDATE, and DELETE.
+The file [lib/index.js](https://oddlylabs.com/brunosimione/ITE5430/src/week3/week3/Assignment/lib/index.js) contains the API routes for GET, POST, UPDATE, and DELETE.
 
 # Package.json
 If it is a new folder, you need to run the installation again:
@@ -74,14 +75,14 @@ If it is a new folder, you need to run the installation again:
 npm install mongodb
 ```
 
-This will create the XXXX file. We need to update de plugins and dependencies to include the **Babel**.
+This will create the [package.json](https://oddlylabs.com/brunosimione/ITE5430/src/week3/week3/Assignment/package.json) file. We need to update de plugins and dependencies to include the **Babel**.
 
 # Build the application
 
 ```
 npm run build
 ```
-
+This will create the /dist folder with the [index.js](https://oddlylabs.com/brunosimione/ITE5430/src/week3/week3/Assignment/dist/index.js) file.
 # Run the micro service
 ```
 npm start
@@ -91,4 +92,12 @@ npm start
 Open a new command terminal and run the CRUD commands, for example:
 ```
 curl -X GET http://localhost:3000 -d '{"brand":"LG"}'
+```
+
+Return:
+
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   204  100   190  100    14   4042    297 --:--:-- --:--:-- --:--:--  4340[{   "_id":"5c59cfc0b9598c2c4057da60","brand":"LG","price":750.1,"model":"Soundbar XY   4561","tags":["SOUNDBAR","LG"],"description":{"height":"20cm","weight":"75cm","d   epth":"20cm","watts":"50"}}]
 ```
