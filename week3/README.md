@@ -72,7 +72,7 @@ The file [lib/index.js](https://oddlylabs.com/brunosimione/ITE5430/src/week3/wee
 If it is a new folder, you need to run the installation again:
 
 ```
-npm install mongodb
+npm install mongodb --save
 ```
 
 This will create the [package.json](https://oddlylabs.com/brunosimione/ITE5430/src/week3/week3/Assignment/package.json) file. We need to update de plugins and dependencies to include the **Babel**.
@@ -99,5 +99,5 @@ Return:
 ```
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   204  100   190  100    14   4042    297 --:--:-- --:--:-- --:--:--  4340[{   "_id":"5c59cfc0b9598c2c4057da60","brand":"LG","price":750.1,"model":"Soundbar XY   4561","tags":["SOUNDBAR","LG"],"description":{"height":"20cm","weight":"75cm","d   epth":"20cm","watts":"50"}}]
+100   204  100   190  100    14   4042    297 --:--:-- --:--:-- --:--:--  4340[{   "_id":"5c59cfc0b9598c2c4057da60","brand":"LG","price":750.1,"model":"Soundbar XY   4561","tags":["SOUNDBAR","LG"],"description":{"height":"20cm","weight":"75cm","depth":"20cm","watts":"50"}}]
 ```
