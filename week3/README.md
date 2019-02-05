@@ -35,3 +35,60 @@ This command will run the utility that helps in the package.json file creation
 # *Glossary*
 **NPM** -> Package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js. It consists of a command line client, also called npm, and an online database of public and paid-for private packages, called the npm registry.
 https://www.npmjs.com/
+
+# *Part II*
+
+# Run MongoDB on Docker
+We need to run the docker container containing the MongoDB that will wait for a Connection oh the specified port.
+
+
+`docker run -it -p 27017:27017 --name my-mongo mongo:3.4.18-jessie`
+
+In this case, the MongoDB will wait for a connectino on port 27017.
+
+# Testing Connection
+We changed the file index.js so we can test the connection with Node and MongoDB *(see file index.js)*
+
+
+# Populate MongoDB
+Create the file XXXX to populate the database.
+
+# Checking Data and Connection
+Run the file XXXX to check the data and connection with Node -> MongoDB
+
+```
+node getdata.js
+```
+
+
+# Create the micro service file
+The file XXXX contains the micro sevice that will listen to the specified port (in this case :3000) and will link with the lib folder containing the API.
+
+# Create the API routes file
+The file XXXX contains the API routes for GET, POST, UPDATE, and DELETE.
+
+# Package.json
+If it is a new folder, you need to run the installation again:
+
+```
+npm install mongodb
+```
+
+This will create the XXXX file. We need to update de plugins and dependencies to include the **Babel**.
+
+# Build the application
+
+```
+npm run build
+```
+
+# Run the micro service
+```
+npm start
+```
+
+# Send commands to micro serice
+Open a new command terminal and run the CRUD commands, for example:
+```
+curl -X GET http://localhost:3000 -d '{"brand":"LG"}'
+```
