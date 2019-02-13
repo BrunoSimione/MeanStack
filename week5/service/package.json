@@ -1,0 +1,26 @@
+{
+  "name": "micro_service",
+  "version": "1.0.0",
+  "description": "Micro service async api",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro-serve -p 8080 dist/",
+    "build": "babel lib --out-dir dist",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://oddlylabs.com/brunosimione/ITE5430"
+  },
+  "keywords": [
+    "async"
+  ],
+  "author": "brunosimione",
+  "license": "ISC",
+  "dependencies": {
+    "micro": "^9.3.3"
+  }
+}
