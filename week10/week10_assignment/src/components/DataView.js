@@ -1,13 +1,13 @@
 import React from "react";
 
 export const DataView = props => {
-  const employees = props.info;
-  const listItems = employees.map(employee => (
-    <li key={employee.id}>{employee.employee_name}</li>
+  const eletronics = props.info;
+  const listItems = eletronics.map(eletronic => (
+    <li key={eletronic.id}>{eletronic.brand + " | " + eletronic.model}</li>
   ));
   return (
     <div>
-      <h1>Employees</h1>
+      <h1>Eletronics</h1>
       <ul>{listItems}</ul>
     </div>
   );
