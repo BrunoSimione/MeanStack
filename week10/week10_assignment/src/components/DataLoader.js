@@ -12,7 +12,7 @@ class DataLoader extends Component {
     console.log("component is mounted, doing fetch");
     //do an api call
     ///got result back
-    fetch("http://dummy.restapiexample.com/api/v1/employees")
+    fetch("http://192.168.99.100/api/eletronics/all")
       .then(response => response.json())
       .then(json => this.setState({ data: json, loaded: true }));
   }
