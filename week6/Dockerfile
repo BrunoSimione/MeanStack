@@ -5,9 +5,9 @@ WORKDIR /usr/src/app
 
 # Create an environmental variable
 ENV NODE_ENV prod
-ENV MONGO_INITDB_ROOT_USERNAME ''
-ENV MONGO_INITDB_ROOT_PASSWORD  ''
-ENV MONGO_INITDB_DATABASE products
+ENV MONGO_INITDB_ROOT_USERNAME admin
+ENV MONGO_INITDB_ROOT_PASSWORD secret
+ENV MONGO_INITDB_DATABASE mydatabase
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied

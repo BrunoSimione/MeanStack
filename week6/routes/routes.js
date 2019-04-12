@@ -1,6 +1,6 @@
 const express = require("express");
 
-const Document = require("../models/eletronic.js/index.js");
+const Document = require("../models/eletronic");
 const router = express.Router();
 
 router.get("/eletronics/all", (req, res, next) => {

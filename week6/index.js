@@ -3,13 +3,11 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 
-const dbName = process.env.NODE_ENV === "prod" ? "my-mongo" : "192.168.99.100";
+const dbName = process.env.NODE_ENV === "dev" ? "database-test" : "192.168.99.100";
 
 const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${
   process.env.MONGO_INITDB_ROOT_PASSWORD
 }@${dbName}:27017`;
-
-// const url = `mongodb://admin:secret@${dbName}:27017`;
 
 const options = {
   useNewUrlParser: true,
@@ -34,7 +32,7 @@ MongoClient.connect(url, options, (err, database) => {
     console.log(`FATAL MONGODB CONNECTION ERROR: ${err}:${err.stack}`);
     process.exit(1);
   }
-  app.locals.db = database.db("leaflet");
+  app.locals.db = database.db("mydatabase");
   http.listen(port, () => {
     console.log("CORS enabled Listening on port " + port);
     app.emit("APP_STARTED");
